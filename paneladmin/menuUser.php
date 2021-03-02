@@ -1,5 +1,10 @@
 <?php 
-session_start();
+
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+
 if (empty($_SESSION['username']) AND empty($_SESSION['password'])){
   include "file/404.html";
 }
@@ -67,7 +72,6 @@ $nama = $_SESSION['nama_pegawai'];
               </a>
             <ul class="sub">
               <li><a href="grids.html">Edit Profil</a></li>
-              <li><a href="calendar.html">Kelola Pengguna</a></li>
             </ul>
           </li>
           <li class="sub-menu">

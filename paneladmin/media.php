@@ -8,6 +8,7 @@ else{
 include 'config/koneksi.php';
 
 $nama = $_SESSION['nama_pegawai'];
+$jabatan = $_SESSION['id_jabatan'];
 
 ?>
 
@@ -269,7 +270,17 @@ $nama = $_SESSION['nama_pegawai'];
           </li>
          <?php 
 
-         include "menu.php";
+         if ($jabatan==1) {
+            include "menu.php";
+         }
+        
+         else if ($jabatan==2){
+          include "menuUser.php";
+         }
+
+         else {
+          include "file/404.html";
+         }
 
           ?>
         <!-- sidebar menu end-->
